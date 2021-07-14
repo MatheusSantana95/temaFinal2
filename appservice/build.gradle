@@ -1,0 +1,37 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id 'application'
+	id 'idea'
+}
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'com.netflix.hystrix:hystrix-metrics-event-stream:1.5.18'
+	implementation 'com.netflix.hystrix:hystrix-dashboard:1.5.18'
+	implementation 'com.netflix.hystrix:hystrix-core:1.5.18'
+	implementation 'com.netflix.eureka:eureka-client:1.10.10'
+	implementation 'com.netflix.ribbon:ribbon:2.7.17'
+	implementation 'com.netflix.ribbon:ribbon-eureka:2.7.17'
+	implementation 'com.netflix.ribbon:ribbon-core:2.7.17'
+	implementation 'com.netflix.ribbon:ribbon-loadbalancer:2.7.17'
+	implementation 'com.netflix.feign:feign-gson:8.18.0'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'io.github.openfeign:feign-core:10.7.4'
+	implementation 'com.google.code.gson:gson:2.8.5'
+	runtimeOnly 'mysql:mysql-connector-java'
+	testImplementation ('org.springframework.boot:spring-boot-starter-test')
+	testImplementation 'org.mockito:mockito-core:3.5.10'
+}
+
+test {
+	useJUnitPlatform()
+}

@@ -1,0 +1,28 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id 'application'
+}
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'com.netflix.hystrix:hystrix-metrics-event-stream:1.5.18'
+	implementation 'com.netflix.hystrix:hystrix-dashboard:1.5.18'
+	implementation 'com.netflix.hystrix:hystrix-core:1.5.18'
+	implementation 'com.netflix.eureka:eureka-client:1.10.10'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'mysql:mysql-connector-java'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
